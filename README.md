@@ -15,7 +15,7 @@ Lebih lanjut mengenai Markdown dan Pandoc bisa dibaca di [blog saya](http://soft
 
 ## Cara Build ##
 
-## Prasyarat ##
+### Prasyarat ###
 
 Untuk melakukan build terhadap modul praktikum dan slide presentasi, Anda membutuhkan hal sebagai berikut:
 
