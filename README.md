@@ -35,11 +35,15 @@ Untuk mengkonversi modul praktikum menjadi PDF, berikut caranya:
 
 2. Masuk ke folder modul praktikum
     
+    ```
     cd modul
+    ```
     
 3. Build dengan pandoc
 
+    ```
     pandoc --template artivisi-template.tex  --variable mainfont="Droid Serif" --variable sansfont="Droid Sans" --variable monofont="Inconsolata" --variable fontsize=12pt --variable version=1.0 --latex-engine=xelatex --toc -N -o modul-java-desktop.pdf *md
+    ```
 
 
 ### Sample Code ###
@@ -49,12 +53,16 @@ Untuk menjalankan contoh kode praktikum, berikut caranya:
 
 2. Masuk ke folder sample-code yang diinginkan, misalnya sesi-01
     
+    ```
     cd sample-code
     cd sesi-01
+    ```
     
 3. Build dan Run dengan Maven
 
+    ```
     mvn clean package exec:java -Dexec.mainClass="nama.class.yang.ingin.di.Jalankan"
+    ```
     
 ## Cara kontribusi ##
 
