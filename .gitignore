@@ -1,1 +1,5 @@
 target/
+
+*.pdf
+*.class
+*.html
