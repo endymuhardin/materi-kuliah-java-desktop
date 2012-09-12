@@ -15,9 +15,11 @@ Hanya isi file Java nya saja yang berubah, sisanya (struktur folder, konfigurasi
 biasanya akan tetap sama. 
 Langkah pertama kita buat directory project menggunakan maven, buka aplikasi command prompt/cmd lalu ketikkan perintah berikut :
 
-`
-mvn archetype:create -DgroupId=com.artivisi.project -DartifactId=my-app
-`
+```
+mvn archetype:create \
+-DgroupId=com.artivisi.project \
+-DartifactId=my-app
+```
 
 Dengan perintah diatas akan menghasilkan directory-directory dan file-file yang akan membentuk struktur project.
 
@@ -30,11 +32,12 @@ Berikut adalah screenshot folder yang telah berhasil dibuat dengan perintah diat
 
 Berikut adalah isi dari pada pom.xml yang ada pada folder "my-app" :
 
-`
+```xml
 <!-- code ini yang mengarah kerepository maven : -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 <!-- code ini bertujuan untuk melakukan compile kedalam jar  -->
   <groupId>com.artivisi.project</groupId>
@@ -49,7 +52,8 @@ Berikut adalah isi dari pada pom.xml yang ada pada folder "my-app" :
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   
-<!-- code ini adalah dependensi yang dapat kita tambah sesuai project yang dibuat  -->
+<!-- code ini adalah dependensi yang dapat kita tambah 
+     sesuai project yang dibuat  -->
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -60,13 +64,13 @@ Berikut adalah isi dari pada pom.xml yang ada pada folder "my-app" :
   </dependencies>
   </project>
 
-`
+```
 
 ### Kode Program Java ###
 
-Program java sederhana pun akan otomatis terbuat dengan nama "App.java"  pada directory "\my-app\src\main\java\com\artivisi\project" , berikut dapat kita lihat isi dari "App.java" :
+Program java sederhana pun akan otomatis terbuat dengan nama `App.java`  pada directory `my-app/src/main/java/com/artivisi/project` , berikut dapat kita lihat isi dari `App.java` :
 
-`
+```java
 package com.artivisi.project;
 
 /**
@@ -81,25 +85,30 @@ public class App
     }
 }
 
-`
+```
 
 ### Menjalankan Program ###
 
 Jika telah selesai dibuat struktur foldernya maka kita dapat kembali ke- command prompt/cmd dan mengetikkan perintah ini :
 
-`
+```
 mvn clean install
-`
+```
+
 Ada pun perintah diatas bertujuan untuk melakukan clean untuk mencegah terjadinya error pada saat compile atau menjalankan project.
 
-Gunakan perintah ini untuk menjadikan App.java sebagai main class sekaligus untuk compile project menjadi ".jar" :
+Gunakan perintah ini untuk menjadikan App.java sebagai main class sekaligus untuk compile project menjadi `.jar` :
 
-`
+```
 mvn exec:java -Dexec.mainClass=com.artivisi.project.App
-`
+```
+
 Setalah di compile kita dapat menjalankan aplikasi dengan perintah dibawah ini :
 
-`
-mvn clean package exec:java -Dexec.mainClass=com.artivisi.project.App -Dexec.classpathScope=runtime
-`
+```
+mvn clean package exec:java \
+-Dexec.mainClass=com.artivisi.project.App \
+-Dexec.classpathScope=runtime
+```
+
 Jika setiap langkah-langkah diatas berhasil maka kita telah selesai.
