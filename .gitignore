@@ -2,3 +2,6 @@ target/
 
 *.pdf
 *.class
+
+.idea
+*.iml
